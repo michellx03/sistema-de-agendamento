@@ -3,7 +3,7 @@ package br.com.sistema.agendamento.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.sistema.agendamento.entities.Paciente;
+import br.com.sistema.agendamento.domain.Paciente;
 import br.com.sistema.agendamento.exception.BadResourceException;
 import br.com.sistema.agendamento.exception.ResourceAlreadyExistsException;
 import br.com.sistema.agendamento.exception.ResourceNotFoundException;

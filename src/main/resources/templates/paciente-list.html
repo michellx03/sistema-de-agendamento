@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lista de pacientes</title>
+
+</head>
+<body>
+<h1>Lsita de Pacientes</h1>
+
+<div>
+  <nobr>
+    <a th:href="@{/pacientes/add}">Criar Paciente</a> |
+    <a th:href="@{/}">Voltar</a>
+  </nobr>
+</div>
+<br/><br/>
+<div>
+  <table border="1">
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th>Email</th>
+      <th>Editar</th>
+    </tr>
+    <tr th:each ="paciente : ${pacientes}">
+      <td><a th:href="@{/pacientes/{pacienteId}(pacienteId=${paciente.id})}" th:utext="${paciente.id}">...</a></td>
+      <td><a th:href="@{/pacientes/{pacienteId}(pacienteId=${paciente.id})}" th:utext="${paciente.nome}">...</a></td>
+      <td th:utext="${paciente.telefone}">...</td>
+      <td th:utext="${paciente.email}">...</td>
+      <td><a th:href="@{/pacientes/{pacienteId}/edit(pacienteId=${paciente.id})}">Editar</a></td>
+    </tr>
+  </table>
+</div>
+<br/><br/>
+<div>
+  <nobr>
+    <span th:if="${hasPrev}"><a th:href="@{/contacts?page={prev}(prev=${prev})}">Prev</a>&nbsp;&nbsp;&nbsp;</span>
+    <span th:if="${hasNext}"><a th:href="@{/contacts?page={next}(next=${next})}">Next</a></span>
+  </nobr>
+</div>
+</body>
+</html>

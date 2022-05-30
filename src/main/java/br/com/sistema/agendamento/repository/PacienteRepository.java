@@ -1,6 +1,6 @@
 package br.com.sistema.agendamento.repository;
 
-import br.com.sistema.agendamento.entities.Paciente;
+import br.com.sistema.agendamento.domain.Paciente;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
